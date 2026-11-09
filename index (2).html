@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>১০ ডেইজ বিজনেস</title>
+<meta name="description" content="প্রতিটি বিজনেস প্রোজেক্ট ১০ দিনে — কী করছি, কেন করছি, ভিডিওসহ সবকিছু সবার সামনে।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-900:#0b3d24;
+  --green-800:#0f5132;
+  --green-700:#166a42;
+  --green-100:#e3f1e8;
+  --gold-600:#b8860b;
+  --gold-500:#d4a017;
+  --gold-400:#e6b93a;
+  --gold-100:#fbf1d3;
+  --ink:#10261a;
+  --paper:#fffdf6;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Hind Siliguri',sans-serif;
+  color:var(--ink);
+  background-color:var(--paper);
+  /* রয়্যাল বেঙ্গল টাইগারের হালকা সোনালি ডোরাকাটা ছাপ */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg fill='%23d4a017' fill-opacity='0.16'%3E%3Cpath d='M20 10 Q70 50 55 130 Q40 60 20 10Z'/%3E%3Cpath d='M190 0 Q250 40 235 120 Q215 50 190 0Z'/%3E%3Cpath d='M300 150 Q350 200 330 290 Q315 210 300 150Z'/%3E%3Cpath d='M90 190 Q150 230 130 330 Q110 250 90 190Z'/%3E%3Cpath d='M240 230 Q270 260 262 320 Q250 270 240 230Z'/%3E%3Cpath d='M0 250 Q30 280 22 340 Q10 290 0 250Z'/%3E%3Cpath d='M150 110 Q175 130 170 175 Q160 140 150 110Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment:fixed;
+  line-height:1.7;
+}
+a{color:inherit}
+.wrap{width:min(1100px,92%);margin-inline:auto}
+
+/* ---------- Header ---------- */
+header.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,61,36,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:3px solid var(--gold-500);
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{font-family:'Noto Serif Bengali',serif;font-weight:800;font-size:1.3rem;color:var(--gold-400);text-decoration:none}
+.nav nav{display:flex;gap:18px;flex-wrap:wrap}
+.nav nav a{color:#eaf5ee;text-decoration:none;font-weight:500;font-size:.98rem}
+.nav nav a:hover{color:var(--gold-400)}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(135deg,var(--green-900),var(--green-700));
+  color:#fff;text-align:center;padding:84px 0 96px;position:relative;overflow:hidden;
+}
+.hero .wrap{position:relative}
+.badge{
+  display:inline-block;background:var(--gold-500);color:var(--green-900);
+  font-weight:700;padding:5px 18px;border-radius:99px;font-size:.95rem;margin-bottom:18px;
+}
+.hero h1{font-family:'Noto Serif Bengali',serif;font-size:clamp(2.2rem,6vw,4rem);line-height:1.25;color:var(--gold-400)}
+.hero p.lead{max-width:700px;margin:18px auto 30px;font-size:1.15rem;color:#e6f3ea}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:12px 26px;border-radius:99px;font-weight:600;font-size:1rem;
+  text-decoration:none;border:2px solid var(--gold-500);cursor:pointer;font-family:inherit;transition:.2s;
+}
+.btn.gold{background:var(--gold-500);color:var(--green-900)}
+.btn.gold:hover{background:var(--gold-400)}
+.btn.ghost{background:transparent;color:var(--gold-400)}
+.btn.ghost:hover{background:rgba(230,185,58,.15)}
+
+/* ---------- Sections ---------- */
+section{padding:64px 0}
+.sec-title{text-align:center;margin-bottom:34px}
+.sec-title h2{font-family:'Noto Serif Bengali',serif;font-size:clamp(1.6rem,4vw,2.3rem);color:var(--green-800)}
+.sec-title h2::after{content:"";display:block;width:90px;height:4px;background:var(--gold-500);border-radius:4px;margin:10px auto 0}
+.sec-title p{color:#3d5646;margin-top:8px}
+
+/* ---------- About ---------- */
+.about{
+  background:#fff;border:2px solid var(--gold-400);border-radius:var(--radius);
+  padding:30px;box-shadow:0 10px 30px rgba(15,81,50,.08);
+}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:18px}
+.about h3{color:var(--green-800);margin-bottom:6px}
+
+/* ---------- Hero stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:46px auto 0;max-width:820px}
+.stats div{background:rgba(255,255,255,.08);border:1px solid rgba(230,185,58,.55);border-radius:14px;padding:14px 10px}
+.stats b{display:block;font-family:'Noto Serif Bengali',serif;color:var(--gold-400);font-size:1.4rem}
+.stats span{font-size:.88rem;color:#d6eadd}
+
+/* ---------- About (extended) ---------- */
+.about .big{font-size:1.08rem}
+.sec-title.sub{margin:54px 0 24px}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+.feat .f{background:#fff;border:1px solid #e8dcae;border-top:4px solid var(--gold-500);border-radius:var(--radius);padding:20px;box-shadow:0 6px 18px rgba(15,81,50,.07)}
+.feat .f i{font-style:normal;font-size:1.8rem}
+.feat .f h3{color:var(--green-800);margin:4px 0 4px;font-size:1.12rem}
+.feat .f p{font-size:.96rem;color:#33493b}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chips span{background:var(--green-800);color:var(--gold-400);border:2px solid var(--gold-500);border-radius:99px;padding:6px 16px;font-weight:600;font-size:.95rem}
+.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.who div{background:var(--gold-100);border:1px solid var(--gold-500);border-radius:14px;padding:14px 16px}
+.who b{display:block;color:var(--green-800)}
+.who span{font-size:.93rem;color:#33493b}
+.flow{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.flow li{counter-increment:s;position:relative;background:#fff;border:2px solid var(--green-700);border-radius:var(--radius);padding:44px 18px 18px;font-size:.96rem;color:#33493b}
+.flow li::before{content:counter(s,bengali);position:absolute;top:-16px;left:16px;width:38px;height:38px;border-radius:50%;background:var(--gold-500);color:var(--green-900);font-weight:800;display:flex;align-items:center;justify-content:center;border:3px solid var(--paper);font-size:1.1rem}
+.flow li b{display:block;color:var(--green-800);font-size:1.08rem;margin-bottom:2px}
+.disc{margin-top:36px;background:var(--gold-100);border-left:5px solid var(--gold-500);border-radius:10px;padding:14px 18px;font-size:.95rem}
+
+/* ---------- Project facts ---------- */
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.meta span{font-size:.82rem;background:var(--green-100);color:var(--green-800);border-radius:99px;padding:2px 12px;font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:0 0 6px}
+.facts div{background:var(--gold-100);border:1px solid var(--gold-500);border-radius:12px;padding:10px 14px}
+.facts small{display:block;color:#6a5a1f;font-size:.8rem}
+.facts b{color:var(--green-800)}
+
+/* ---------- Project cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px}
+.card{
+  background:#fff;border-radius:var(--radius);overflow:hidden;
+  border:1px solid #e8dcae;box-shadow:0 8px 24px rgba(15,81,50,.08);
+  display:flex;flex-direction:column;transition:.25s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(15,81,50,.16)}
+.card .top{
+  background:linear-gradient(120deg,var(--green-800),var(--green-700));
+  color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;
+}
+.card .top .d{font-family:'Noto Serif Bengali',serif;color:var(--gold-400);font-size:1.05rem}
+.status{font-size:.8rem;font-weight:600;padding:3px 12px;border-radius:99px;background:var(--gold-500);color:var(--green-900)}
+.status.done{background:#c9efd7}
+.status.soon{background:#fff;color:var(--green-800)}
+.card .body{padding:20px;flex:1}
+.card h3{color:var(--green-800);margin-bottom:8px;font-size:1.25rem}
+.card p{font-size:.98rem;color:#33493b}
+.bar{height:8px;background:var(--green-100);border-radius:99px;margin-top:14px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-500),var(--gold-400))}
+.bar-t{font-size:.82rem;color:#5b705f;margin-top:4px}
+.card .foot{padding:0 20px 20px}
+.card .foot .btn{padding:9px 18px;font-size:.95rem;width:100%;text-align:center}
+.btn.green{background:var(--green-800);color:#fff;border-color:var(--green-800)}
+.btn.green:hover{background:var(--green-700)}
+.empty{text-align:center;color:#5b705f;grid-column:1/-1}
+
+/* ---------- Support ---------- */
+.support{background:linear-gradient(135deg,var(--green-900),var(--green-800));color:#fff}
+.support .sec-title h2{color:var(--gold-400)}
+.support .sec-title p{color:#d6eadd}
+.pay{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.pay-card{
+  background:rgba(255,255,255,.07);border:2px solid var(--gold-500);
+  border-radius:var(--radius);padding:26px;
+}
+.pay-card h3{color:var(--gold-400);font-size:1.3rem;margin-bottom:12px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(230,185,58,.35)}
+.row:last-child{border:none}
+.row span.k{color:#cfe6d8;font-size:.92rem}
+.row b{font-size:1.05rem;word-break:break-all}
+.copy{
+  background:var(--gold-500);color:var(--green-900);border:none;border-radius:8px;
+  padding:4px 12px;font-family:inherit;font-weight:600;cursor:pointer;font-size:.85rem;flex-shrink:0;
+}
+.copy:hover{background:var(--gold-400)}
+.note{margin-top:22px;text-align:center;color:#d6eadd;font-size:.95rem}
+
+/* ---------- Project modal ---------- */
+.modal{
+  position:fixed;inset:0;background:rgba(5,30,18,.78);z-index:100;display:none;
+  align-items:flex-start;justify-content:center;overflow-y:auto;padding:26px 12px;
+}
+.modal.open{display:flex}
+.sheet{
+  background:var(--paper);width:min(880px,100%);border-radius:var(--radius);
+  border:3px solid var(--gold-500);overflow:hidden;
+}
+.sheet .head{
+  background:var(--green-900);color:#fff;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.sheet .head h3{color:var(--gold-400);font-family:'Noto Serif Bengali',serif}
+.close{background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer;line-height:1}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;padding:16px 22px 0}
+.tab{
+  border:2px solid var(--gold-500);background:#fff;color:var(--green-800);border-radius:99px;
+  padding:5px 14px;font-family:inherit;font-weight:600;cursor:pointer;font-size:.92rem;
+}
+.tab.has{background:var(--green-100)}
+.tab.live{background:var(--gold-400)}
+.tab.active{background:var(--green-800);color:var(--gold-400);border-color:var(--green-800)}
+.sheet .content{padding:22px}
+.sheet h4{color:var(--green-800);margin:18px 0 4px}
+.sheet h4:first-child{margin-top:0}
+.txt{white-space:pre-line}
+.video{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000;margin-bottom:14px}
+.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.novideo{
+  background:var(--green-100);border:2px dashed var(--green-700);border-radius:12px;
+  padding:26px;text-align:center;color:var(--green-800);margin-bottom:14px;
+}
+.comments{margin-top:26px;border-top:3px solid var(--gold-500);padding-top:18px}
+.cfg-note{background:var(--gold-100);border:1px solid var(--gold-500);padding:14px;border-radius:10px;font-size:.92rem}
+.share{margin-top:14px;font-size:.88rem}
+.share button{background:none;border:none;color:var(--green-700);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:.88rem}
+
+footer{background:var(--green-900);color:#cfe6d8;text-align:center;padding:26px 0;border-top:4px solid var(--gold-500);font-size:.95rem}
+footer b{color:var(--gold-400)}
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:var(--gold-500);color:var(--green-900);padding:10px 22px;border-radius:99px;font-weight:700;
+  transition:.3s;z-index:200;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">🐅 ১০ ডেইজ বিজনেস</a>
+    <nav>
+      <a href="#about">পরিচিতি</a>
+      <a href="#projects">প্রোজেক্ট</a>
+      <a href="#support">সহযোগিতা</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="badge">প্রতিটি বিজনেস মাত্র ১০ দিনে</span>
+    <h1>আপনার ব্যবসার স্বপ্ন<br>এবার বাস্তবে দেখুন</h1>
+    <p class="lead">আমি এখানে একের পর এক নতুন বিজনেস শুরু করব, মাত্র ১০ দিনে। কত টাকা লাগল, কী কী করলাম, কত লাভ-ক্ষতি হলো, কী ভুল করলাম, কী শিখলাম, সবকিছু ভিডিওসহ খোলাখুলি দেখাব। যাতে আপনিও একই কাজ নিজে শুরু করতে পারেন, কোনো অনুমান ছাড়াই।</p>
+    <div class="btns">
+      <a class="btn gold" href="#projects">প্রোজেক্টগুলো দেখুন</a>
+      <a class="btn ghost" href="#about">কীভাবে আপনার কাজে লাগবে?</a>
+    </div>
+    <div class="stats">
+      <div><b>১০ দিন</b><span>প্রতিটি বিজনেসের সময়</span></div>
+      <div><b>১০০%</b><span>বাস্তব খরচ ও হিসাব</span></div>
+      <div><b>প্রতিদিন</b><span>নতুন ভিডিও ও আপডেট</span></div>
+      <div><b>ফ্রি</b><span>সবার জন্য দেখা ও শেখা</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-title"><h2>এই চ্যালেঞ্জ কেন?</h2><p>ব্যবসা নিয়ে বই পড়া আর বাস্তবে ব্যবসা করা, দুটো একেবারে আলাদা। আমি দ্বিতীয়টা করে দেখাচ্ছি।</p></div>
+    <div class="about">
+      <p class="big">আমাদের অনেকেরই ব্যবসা করার ইচ্ছা আছে, কিন্তু শুরু করা হয় না। কারণ জানি না <b>কত টাকা লাগবে</b>, <b>কোথা থেকে শুরু করব</b>, <b>লোকসান হলে কী হবে</b>। এই সাইটে আমি সেই সব প্রশ্নের উত্তর নিজে ব্যবসা করে দেখাব। প্রতিটি বিজনেস ১০ দিনে শুরু করে চালিয়ে ফলাফলসহ আপনাদের সামনে রাখব। একটি শেষ হলে আসবে আরেকটি নতুন।</p>
+      <div class="about-grid">
+        <div><h3>🎯 কী করছি</h3><p>একটির পর একটি বিজনেস বা প্রোজেক্ট ১০ দিনে বাস্তবে চালিয়ে দেখা এবং প্রতিদিনের কাজ ভিডিও করে রাখা।</p></div>
+        <div><h3>💡 কেন করছি</h3><p>হাতে-কলমে শেখা, নিজের সক্ষমতা যাচাই করা এবং সবাইকে দেখানো যে ছোট শুরু থেকেও কিছু করা যায়।</p></div>
+        <div><h3>🤝 আপনার ভূমিকা</h3><p>প্রতিটি ভিডিওর নিচে মতামত দিন, আইডিয়া দিন, চাইলে আপনার দেওয়া প্রোজেক্ট করতে আমাকে সহযোগিতা করুন।</p></div>
+      </div>
+    </div>
+
+    <div class="sec-title sub"><h2>প্রতিটি প্রোজেক্টে আপনি যা পাবেন</h2><p>ব্যবসা শুরুর আগে যা যা জানা দরকার, সব এক জায়গায়</p></div>
+    <div class="feat">
+      <div class="f"><i>💰</i><h3>কত মূলধন লাগবে</h3><p>কোন বিজনেসে কত টাকা লাগল, কোথায় কত খরচ হলো, তার পুরো হিসাব।</p></div>
+      <div class="f"><i>🧾</i><h3>কী কী লাগবে</h3><p>জিনিসপত্র, জায়গা, দক্ষতা, সময়, শুরুর আগে ঠিক কী কী জোগাড় করতে হবে।</p></div>
+      <div class="f"><i>🪜</i><h3>ধাপে ধাপে কাজ</h3><p>প্রথম দিন থেকে দশম দিন পর্যন্ত কখন কী করলাম, যাতে আপনি হুবহু অনুসরণ করতে পারেন।</p></div>
+      <div class="f"><i>📈</i><h3>লাভ-লোকসান</h3><p>কোনো কিছু না লুকিয়ে আসল আয়-ব্যয়। লাভ হলে কীভাবে, লোকসান হলে কেন।</p></div>
+      <div class="f"><i>⚠️</i><h3>ঝুঁকি ও ভুল</h3><p>কী কী ভুল করলাম ও কোথায় ঝুঁকি আছে, যাতে আপনি সেই ভুল না করেন।</p></div>
+      <div class="f"><i>🧠</i><h3>বিজনেস আইডিয়া ও শেখা</h3><p>প্রতিটি প্রোজেক্ট শেষে পরিষ্কার শিক্ষা এবং আপনি নিজের মতো করে কীভাবে করতে পারেন তার নতুন নতুন আইডিয়া।</p></div>
+    </div>
+
+    <div class="sec-title sub"><h2>কোন ধরনের বিজনেস নিয়ে কাজ হবে?</h2><p>ছোট পুঁজি থেকে শুরু করে বিভিন্ন খাতের ব্যবসা, সবই থাকবে</p></div>
+    <div class="chips">
+      <span>🍲 খাবার ও রান্নার ব্যবসা</span><span>🛒 অনলাইন বিক্রি</span><span>🌾 কৃষি ও পশুপালন</span>
+      <span>🧵 হস্তশিল্প ও হোমমেড পণ্য</span><span>🔧 সেবা ও মেরামত</span><span>💻 ডিজিটাল ও ফ্রিল্যান্সিং</span>
+      <span>📦 পাইকারি ও রিসেলিং</span><span>🎓 শিক্ষা ও কোচিং</span><span>🚚 ডেলিভারি ও পরিবহন</span>
+      <span>✨ এবং আপনার দেওয়া নতুন আইডিয়া</span>
+    </div>
+
+    <div class="sec-title sub"><h2>কাদের কাজে লাগবে?</h2></div>
+    <div class="who">
+      <div><b>🎓 শিক্ষার্থী</b><span>পড়াশোনার পাশে কম পুঁজিতে আয়ের পথ খুঁজছেন।</span></div>
+      <div><b>🏠 গৃহিণী</b><span>ঘরে বসেই কিছু শুরু করতে চান।</span></div>
+      <div><b>💼 চাকরিপ্রার্থী ও চাকরিজীবী</b><span>চাকরির পাশাপাশি বা বিকল্প আয় চান।</span></div>
+      <div><b>🌱 নতুন উদ্যোক্তা</b><span>শুরুর আগে বাস্তব ধারণা ও হিসাব দেখতে চান।</span></div>
+      <div><b>🏘️ গ্রাম ও ছোট শহরের মানুষ</b><span>হাতের কাছের সম্পদে ব্যবসা করতে চান।</span></div>
+    </div>
+
+    <div class="sec-title sub"><h2>কীভাবে কাজ করবে?</h2></div>
+    <ol class="flow">
+      <li><b>বিজনেস বাছাই</b>আইডিয়া ও কারণসহ নতুন একটি বিজনেস ঘোষণা করব।</li>
+      <li><b>১০ দিনের কাজ</b>প্রতিদিন কী করলাম ভিডিও ও লেখায় আপডেট দেব।</li>
+      <li><b>আপনার মতামত</b>প্রতিটি ভিডিওর নিচে প্রশ্ন ও পরামর্শ জানান।</li>
+      <li><b>ফলাফল ও শিক্ষা</b>শেষে সম্পূর্ণ হিসাব দেখাব এবং পরের বিজনেস শুরু করব।</li>
+    </ol>
+
+    <p class="disc">🔔 <b>সত্য কথা:</b> ব্যবসায় লাভ হতে পারে, লোকসানও হতে পারে। এখানে সবকিছু বাস্তব ফলাফলসহ দেখানো হবে, কোনো সুনির্দিষ্ট আয়ের নিশ্চয়তা নয়। কোনো ব্যবসায় নিজের টাকা লাগানোর আগে নিজের অবস্থা বুঝে সিদ্ধান্ত নিন।</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-title"><h2>বিজনেস প্রোজেক্টসমূহ</h2><p>যেকোনো প্রোজেক্টে ক্লিক করে ১০ দিনের ভিডিও ও আপডেট দেখুন এবং মতামত দিন</p></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="support" id="support">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>আমাকে সহযোগিতা করুন</h2>
+      <p>আপনার কোনো প্রোজেক্টের আইডিয়া থাকলে বা আমার চলমান ও নতুন প্রোজেক্টে পাশে দাঁড়াতে চাইলে টাকা পাঠাতে পারেন</p>
+    </div>
+    <div class="pay">
+      <div class="pay-card">
+        <h3>📱 বিকাশ (পার্সোনাল)</h3>
+        <div class="row"><span class="k">নম্বর</span><b id="bk">01XXXXXXXXX</b><button class="copy" data-copy="bk">কপি</button></div>
+        <div class="row"><span class="k">নাম</span><b>আপনার নাম</b></div>
+      </div>
+      <div class="pay-card">
+        <h3>🏦 ব্যাংক অ্যাকাউন্ট</h3>
+        <div class="row"><span class="k">ব্যাংক</span><b>ব্যাংকের নাম</b></div>
+        <div class="row"><span class="k">অ্যাকাউন্ট নাম</span><b>আপনার নাম</b></div>
+        <div class="row"><span class="k">অ্যাকাউন্ট নং</span><b id="ac">0000000000000</b><button class="copy" data-copy="ac">কপি</button></div>
+        <div class="row"><span class="k">ব্রাঞ্চ</span><b>শাখার নাম</b></div>
+      </div>
+    </div>
+    <p class="note">টাকা পাঠানোর পর ভিডিওর নিচে মন্তব্যে বা আমার সোশ্যাল পেজে জানিয়ে দিলে আমি আপনার আইডিয়াটি বিবেচনা করব। ❤️</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> <b>১০ ডেইজ বিজনেস</b> — সাহস করে শুরু করুন 🐅</div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="sheet">
+    <div class="head"><h3 id="m-title"></h3><button class="close" id="m-close" aria-label="বন্ধ করুন">×</button></div>
+    <div class="tabs" id="m-tabs"></div>
+    <div class="content">
+      <div id="m-panel"></div>
+      <div class="comments">
+        <h4>💬 আপনার মতামত দিন</h4>
+        <div id="m-comments"></div>
+      </div>
+      <div class="share"><button id="m-share">🔗 এই পেজের লিংক কপি করুন</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">কপি হয়েছে ✔</div>
+
+<script>
+/* =========================================================
+   ১) নতুন বিজনেস প্রোজেক্ট যোগ করতে নিচের তালিকায় একটি
+      { ... } ব্লক কপি করে বসান। যত খুশি প্রোজেক্ট যোগ করা যাবে।
+
+   id        : ছোট ইংরেজি নাম (স্পেস ছাড়া), প্রতিটির আলাদা হতে হবে
+   status    : "live" (চলমান) | "done" (সম্পন্ন) | "soon" (আসছে)
+   currentDay: আজ কত দিনের কাজ চলছে (১–১০)
+   days      : প্রতিদিনের আপডেট। শুধু যে দিনের আপডেট দিয়েছেন সেটাই লিখুন।
+
+   video (ভিডিও) — এর যেকোনো একটি দেওয়া যাবে, না থাকলে "" রাখুন:
+     • YouTube লিংক:   "https://www.youtube.com/watch?v=XXXXXXXXXXX"
+                         (আনলিস্টেড ভিডিওও চলবে)
+     • Facebook লিংক:  "https://www.facebook.com/.../videos/123456"
+     • Google Drive:   "https://drive.google.com/file/d/ID/view"
+                         (শেয়ার: "Anyone with the link")
+     • নিজের ভিডিও ফাইল: "videos/day1.mp4"
+                         (index.html এর পাশে videos নামে ফোল্ডার বানিয়ে ফাইল রাখুন)
+   ========================================================= */
+const PROJECTS = [
+  {
+    id: "p1",
+    status: "live",
+    currentDay: 2,
+    category: "খাবার",                      // বিজনেসের ধরন (ঐচ্ছিক)
+    capital: "২,০০০ টাকা",                  // কত মূলধন লেগেছে/লাগবে (ঐচ্ছিক)
+    needs: "ফ্রিজ, প্যাকেট, মোবাইল ফোন",     // কী কী লাগবে (ঐচ্ছিক)
+    time: "দিনে ২-৩ ঘণ্টা",                  // কত সময় দিতে হবে (ঐচ্ছিক)
+    title: "প্রথম বিজনেস প্রোজেক্টের নাম",
+    short: "এখানে প্রোজেক্টের এক-দুই লাইনের পরিচয় লিখুন।",
+    what: "এই বিজনেসে আমি কী করছি তা এখানে লিখুন।",
+    why: "কেন এই বিজনেসটি বেছে নিলাম তার কারণ লিখুন।",
+    result: "১০ দিন শেষে চূড়ান্ত ফলাফল এখানে লিখবেন। এখনও চলমান…",
+    video: "",   // পুরো প্রোজেক্টের পরিচিতি ভিডিও (ঐচ্ছিক)
+    days: [
+      { day: 1, title: "শুরুর দিন", text: "আজ কী কী করেছি, কত খরচ হলো, কী শিখলাম — এখানে লিখুন।", video: "" },
+      { day: 2, title: "দ্বিতীয় দিন", text: "দ্বিতীয় দিনের আপডেট এখানে লিখুন।", video: "" }
+    ]
+  },
+  {
+    id: "p2",
+    status: "soon",
+    currentDay: 0,
+    title: "দ্বিতীয় বিজনেস প্রোজেক্ট",
+    short: "শীঘ্রই আসছে…",
+    what: "", why: "", result: "", video: "",
+    days: []
+  }
+];
+
+/* =========================================================
+   ২) মন্তব্য (কমেন্ট) সিস্টেম — Giscus (সম্পূর্ণ ফ্রি)
+   giscus.app এ গিয়ে আপনার GitHub রিপো দিলে নিচের মানগুলো পাবেন।
+   প্রতিটি ভিডিও/দিনের জন্য আলাদা মন্তব্য থ্রেড তৈরি হবে।
+   ========================================================= */
+const GISCUS = {
+  repo: "",        // যেমন: "yourname/10days-business"
+  repoId: "",      // giscus.app থেকে পাওয়া
+  category: "Announcements",
+  categoryId: ""   // giscus.app থেকে পাওয়া
+};
+
+/* ---------- নিচের অংশ পরিবর্তন করার দরকার নেই ---------- */
+const bn = n => String(n).replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+const label = { done:"সম্পন্ন", live:"চলমান", soon:"আসছে" };
+const $ = id => document.getElementById(id);
+const TOTAL_DAYS = 10;
+let cur = { pid:null, tab:"overview" };
+
+/* ভিডিও লিংক থেকে প্লেয়ার তৈরি */
+function videoHTML(url){
+  if(!url) return `<div class="novideo">🎬 ভিডিও শীঘ্রই আসছে</div>`;
+  url = url.trim();
+  let m;
+  // YouTube
+  m = url.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/);
+  if(!m && /^[\w-]{11}$/.test(url)) m = [0, url];
+  if(m) return `<div class="video"><iframe src="https://www.youtube.com/embed/${m[1]}" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
+  // Google Drive
+  m = url.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+  if(m) return `<div class="video"><iframe src="https://drive.google.com/file/d/${m[1]}/preview" allowfullscreen loading="lazy"></iframe></div>`;
+  // Facebook
+  if(/facebook\.com|fb\.watch/.test(url))
+    return `<div class="video"><iframe src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false" allowfullscreen loading="lazy"></iframe></div>`;
+  // নিজের আপলোড করা ফাইল (mp4/webm/ogg) বা সরাসরি লিংক
+  return `<div class="video"><video controls preload="metadata" playsinline src="${url.replace(/"/g,'&quot;')}"></video></div>`;
+}
+const esc = s => String(s||"").replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* সারসংক্ষেপে মূলধন, কী লাগবে ইত্যাদি */
+function factsHTML(p){
+  const items = [["🏷️ ধরন", p.category], ["💰 মূলধন", p.capital], ["🧾 কী কী লাগবে", p.needs], ["⏱️ সময়", p.time]]
+    .filter(x => x[1]);
+  return items.length ? `<div class="facts">${items.map(x => `<div><small>${x[0]}</small><b>${esc(x[1])}</b></div>`).join("")}</div>` : "";
+}
+
+/* হোম: প্রোজেক্ট কার্ড */
+function renderCards(){
+  $("grid").innerHTML = PROJECTS.length ? PROJECTS.map((p,i) => {
+    const done = p.days.length;
+    const pct = Math.round(done / TOTAL_DAYS * 100);
+    return `
+    <article class="card">
+      <div class="top"><span class="d">প্রোজেক্ট ${bn(i+1)}</span><span class="status ${p.status}">${label[p.status]||""}</span></div>
+      <div class="body">
+        <h3>${esc(p.title)}</h3><p>${esc(p.short)}</p>
+        <div class="meta">${p.category?`<span>🏷️ ${esc(p.category)}</span>`:""}${p.capital?`<span>💰 ${esc(p.capital)}</span>`:""}</div>
+        <div class="bar"><i style="width:${pct}%"></i></div>
+        <div class="bar-t">${bn(done)} / ${bn(TOTAL_DAYS)} দিনের আপডেট</div>
+      </div>
+      <div class="foot"><button class="btn green" data-open="${p.id}">দেখুন ও মতামত দিন</button></div>
+    </article>`;
+  }).join("") : `<p class="empty">শীঘ্রই প্রোজেক্ট যোগ হবে।</p>`;
+}
+
+/* মডাল */
+const modal = $("modal");
+function openProject(pid, tab, push){
+  const p = PROJECTS.find(x => x.id === pid);
+  if(!p) return;
+  cur.pid = pid;
+  tab = tab || "overview";
+  cur.tab = tab;
+  const idx = PROJECTS.indexOf(p) + 1;
+  $("m-title").textContent = `প্রোজেক্ট ${bn(idx)}: ${p.title}`;
+
+  // ট্যাব
+  let tabs = `<button class="tab ${tab==='overview'?'active':''}" data-tab="overview">সারসংক্ষেপ</button>`;
+  for(let d=1; d<=TOTAL_DAYS; d++){
+    const has = p.days.some(x => x.day === d);
+    const live = d === p.currentDay;
+    tabs += `<button class="tab ${has?'has':''} ${live?'live':''} ${String(d)===String(tab)?'active':''}" data-tab="${d}">দিন ${bn(d)}</button>`;
+  }
+  $("m-tabs").innerHTML = tabs;
+
+  // প্যানেল
+  let html, term;
+  if(tab === "overview"){
+    html = videoHTML(p.video) + factsHTML(p) +
+      `<h4>🎯 কী করছি</h4><p class="txt">${esc(p.what)||"শীঘ্রই আপডেট হবে।"}</p>
+       <h4>💡 কেন করছি</h4><p class="txt">${esc(p.why)||"শীঘ্রই আপডেট হবে।"}</p>
+       <h4>📊 ফলাফল</h4><p class="txt">${esc(p.result)||"শীঘ্রই আপডেট হবে।"}</p>`;
+    term = `${p.id}-overview`;
+  } else {
+    const d = p.days.find(x => String(x.day) === String(tab));
+    if(d){
+      html = `<h4>দিন ${bn(d.day)}${d.title ? " — " + esc(d.title) : ""}</h4>` + videoHTML(d.video) +
+             `<p class="txt">${esc(d.text)}</p>`;
+    } else {
+      html = `<div class="novideo">⏳ দিন ${bn(tab)} এর আপডেট এখনও আসেনি। শীঘ্রই আসছে!</div>`;
+    }
+    term = `${p.id}-day${tab}`;
+  }
+  $("m-panel").innerHTML = html;
+  loadComments(term);
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden","false");
+  document.body.style.overflow = "hidden";
+  if(push !== false) history.replaceState(null, "", `#project=${pid}&day=${tab}`);
+}
+
+function loadComments(term){
+  const box = $("m-comments");
+  box.innerHTML = "";
+  if(!GISCUS.repo){
+    box.innerHTML = `<div class="cfg-note">মন্তব্য বক্স চালু করতে কোডের <b>GISCUS</b> অংশে আপনার GitHub রিপোর তথ্য বসান।</div>`;
+    return;
+  }
+  const s = document.createElement("script");
+  s.src = "https://giscus.app/client.js";
+  s.async = true; s.crossOrigin = "anonymous";
+  const a = {
+    "data-repo":GISCUS.repo, "data-repo-id":GISCUS.repoId,
+    "data-category":GISCUS.category, "data-category-id":GISCUS.categoryId,
+    "data-mapping":"specific", "data-term":term,
+    "data-reactions-enabled":"1", "data-emit-metadata":"0",
+    "data-input-position":"top", "data-theme":"light", "data-lang":"bn"
+  };
+  Object.entries(a).forEach(([k,v]) => s.setAttribute(k,v));
+  box.appendChild(s);
+}
+
+function closeProject(){
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+  document.body.style.overflow = "";
+  $("m-panel").innerHTML = "";     // ভিডিও থামানোর জন্য
+  $("m-comments").innerHTML = "";
+  if(location.hash.startsWith("#project=")) history.replaceState(null, "", location.pathname + location.search);
+}
+
+function toast(msg){
+  const t = $("toast"); t.textContent = msg || "কপি হয়েছে ✔"; t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 1600);
+}
+function copyText(text){
+  (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject())
+    .catch(() => {
+      const t = document.createElement("textarea"); t.value = text;
+      document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove();
+    });
+  toast();
+}
+
+document.addEventListener("click", e => {
+  const o = e.target.closest("[data-open]");
+  if(o) return openProject(o.dataset.open, "overview");
+  const t = e.target.closest("[data-tab]");
+  if(t) return openProject(cur.pid, t.dataset.tab);
+  if(e.target === modal || e.target.id === "m-close") return closeProject();
+  if(e.target.id === "m-share") return copyText(location.href);
+  const c = e.target.closest(".copy");
+  if(c) copyText($(c.dataset.copy).textContent.trim());
+});
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeProject(); });
+
+/* শেয়ার করা লিংক থেকে সরাসরি খোলা */
+function openFromHash(){
+  const m = location.hash.match(/^#project=([^&]+)(?:&day=(\w+))?/);
+  if(m) openProject(decodeURIComponent(m[1]), m[2] || "overview", false);
+}
+
+renderCards();
+openFromHash();
+$("yr").textContent = bn(new Date().getFullYear());
+</script>
+</body>
+</html>
