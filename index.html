@@ -168,6 +168,15 @@ section{padding:64px 0}
 .copy:hover{background:var(--gold-400)}
 .note{margin-top:22px;text-align:center;color:#d6eadd;font-size:.95rem}
 
+/* ---------- Social ---------- */
+.social{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.social:empty{display:none}
+.social a{
+  text-decoration:none;background:var(--green-800);color:var(--gold-400);border:2px solid var(--gold-500);
+  border-radius:99px;padding:6px 18px;font-weight:600;font-size:.95rem;transition:.2s;
+}
+.social a:hover{background:var(--gold-500);color:var(--green-900)}
+
 /* ---------- Project modal ---------- */
 .modal{
   position:fixed;inset:0;background:rgba(5,30,18,.78);z-index:100;display:none;
@@ -314,15 +323,15 @@ footer b{color:var(--gold-400)}
     <div class="pay">
       <div class="pay-card">
         <h3>📱 বিকাশ (পার্সোনাল)</h3>
-        <div class="row"><span class="k">নম্বর</span><b id="bk">01XXXXXXXXX</b><button class="copy" data-copy="bk">কপি</button></div>
-        <div class="row"><span class="k">নাম</span><b>আপনার নাম</b></div>
+        <div class="row"><span class="k">নম্বর</span><b id="bk">01340610422</b><button class="copy" data-copy="bk">কপি</button></div>
+        <div class="row" id="bk-name-row"><span class="k">নাম</span><b id="bk-name"></b></div>
       </div>
-      <div class="pay-card">
+      <div class="pay-card" id="bank-card" style="display:none">
         <h3>🏦 ব্যাংক অ্যাকাউন্ট</h3>
-        <div class="row"><span class="k">ব্যাংক</span><b>ব্যাংকের নাম</b></div>
-        <div class="row"><span class="k">অ্যাকাউন্ট নাম</span><b>আপনার নাম</b></div>
-        <div class="row"><span class="k">অ্যাকাউন্ট নং</span><b id="ac">0000000000000</b><button class="copy" data-copy="ac">কপি</button></div>
-        <div class="row"><span class="k">ব্রাঞ্চ</span><b>শাখার নাম</b></div>
+        <div class="row"><span class="k">ব্যাংক</span><b id="b-name"></b></div>
+        <div class="row"><span class="k">অ্যাকাউন্ট নাম</span><b id="b-holder"></b></div>
+        <div class="row"><span class="k">অ্যাকাউন্ট নং</span><b id="ac"></b><button class="copy" data-copy="ac">কপি</button></div>
+        <div class="row"><span class="k">ব্রাঞ্চ</span><b id="b-branch"></b></div>
       </div>
     </div>
     <p class="note">টাকা পাঠানোর পর ভিডিওর নিচে মন্তব্যে বা আমার সোশ্যাল পেজে জানিয়ে দিলে আমি আপনার আইডিয়াটি বিবেচনা করব। ❤️</p>
@@ -330,6 +339,7 @@ footer b{color:var(--gold-400)}
 </section>
 
 <footer>
+  <div class="wrap social" id="social"></div>
   <div class="wrap">© <span id="yr"></span> <b>১০ ডেইজ বিজনেস</b> — সাহস করে শুরু করুন 🐅</div>
 </footer>
 
@@ -410,6 +420,20 @@ const GISCUS = {
   repoId: "R_kgDOVoFJug",
   category: "Announcements",
   categoryId: "DIC_kwDOVoFJus4DKufc"
+};
+
+/* =========================================================
+   ৩) আপনার নিজের তথ্য ও সোশ্যাল লিংক
+   ফাঁকা ("") রাখলে সেই অংশ সাইটে দেখাবে না।
+   ========================================================= */
+const SITE = {
+  bkashName: "",                 // বিকাশে আপনার নামে যা আছে
+  bank: { name:"", holder:"", number:"", branch:"" },   // অ্যাকাউন্ট নম্বর দিলেই ব্যাংক কার্ড দেখাবে
+  social: {
+    facebook:  "",               // যেমন: "https://www.facebook.com/yourpage"
+    instagram: "",               // যেমন: "https://www.instagram.com/yourname"
+    youtube:   ""                // যেমন: "https://www.youtube.com/@yourchannel"
+  }
 };
 
 /* ---------- নিচের অংশ পরিবর্তন করার দরকার নেই ---------- */
@@ -576,6 +600,26 @@ function openFromHash(){
 renderCards();
 openFromHash();
 $("yr").textContent = bn(new Date().getFullYear());
+
+/* বিকাশ নাম, ব্যাংক ও সোশ্যাল লিংক বসানো */
+(function(){
+  if(SITE.bkashName) $("bk-name").textContent = SITE.bkashName;
+  else $("bk-name-row").style.display = "none";
+
+  const b = SITE.bank || {};
+  if(b.number){
+    $("b-name").textContent = b.name || "";
+    $("b-holder").textContent = b.holder || "";
+    $("ac").textContent = b.number;
+    $("b-branch").textContent = b.branch || "";
+    $("bank-card").style.display = "";
+  }
+
+  const defs = [["facebook","📘 ফেসবুক"],["instagram","📸 ইনস্টাগ্রাম"],["youtube","▶️ ইউটিউব"]];
+  $("social").innerHTML = defs
+    .filter(d => SITE.social && /^https?:\/\//.test(SITE.social[d[0]] || ""))
+    .map(d => `<a href="${esc(SITE.social[d[0]])}" target="_blank" rel="noopener">${d[1]}</a>`).join("");
+})();
 </script>
 </body>
 </html>
